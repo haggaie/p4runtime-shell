@@ -1,4 +1,4 @@
-FROM p4lang/third-party:stable AS deps
+FROM p4lang/third-party:20.04 AS deps
 
 SHELL ["/bin/bash", "-c"]
 
@@ -48,7 +48,7 @@ RUN source $VENV/bin/activate && \
 
 RUN echo "export PYTHONPATH=\"$PROTO_BUILD_DIR\"" >> $VENV/bin/activate
 
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 LABEL maintainer="Antonin Bas <antonin@barefootnetworks.com>"
 LABEL description="A shell based on ipython3 for P4Runtime"
 
